@@ -2,42 +2,42 @@ use nth_prime as np;
 
 #[test]
 fn test_first_prime() {
-    assert_eq!(np::nth(0), 2);
+    assert_eq!(np::nth(1), 2);
 }
 
 #[test]
 fn test_second_prime() {
-    assert_eq!(np::nth(1), 3);
+    assert_eq!(np::nth(2), 3);
 }
 
 #[test]
 fn test_sixth_prime() {
-    assert_eq!(np::nth(5), 13);
+    assert_eq!(np::nth(6), 13);
 }
 
 #[test]
 fn test_big_prime() {
-    assert_eq!(np::nth(10_000), 104_743);
+    assert_eq!(np::nth(10_000), 104_729);
 }
 
 #[test]
 fn test_first_prime2() {
-    assert_eq!(np::nth_with_caching(0), 2);
+    assert_eq!(np::nth_with_caching(1), 2);
 }
 
 #[test]
 fn test_second_prime2() {
-    assert_eq!(np::nth_with_caching(1), 3);
+    assert_eq!(np::nth_with_caching(2), 3);
 }
 
 #[test]
 fn test_sixth_prime2() {
-    assert_eq!(np::nth_with_caching(5), 13);
+    assert_eq!(np::nth_with_caching(6), 13);
 }
 
 #[test]
 fn test_big_prime2() {
-    assert_eq!(np::nth_with_caching(10_000), 104_743);
+    assert_eq!(np::nth_with_caching(10_000), 104_729);
 }
 
 #[test]

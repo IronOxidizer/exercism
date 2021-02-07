@@ -29,11 +29,11 @@ fn bench() {
         print!("running benchmark for 12,000th prime...\n");
 
         let now = Instant::now();
-        lib::nth_naive(12_000);
+        dbg!(lib::nth_naive(12_000));
         let method_1_time = now.elapsed().as_millis();
         
         let now2 = Instant::now();
-        lib::nth_with_caching(12_000);
+        dbg!(lib::nth_with_caching(12_000));
         let method_2_time = now2.elapsed().as_millis();
 
         print!("method 1: {}\n", method_1_time);
