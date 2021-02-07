@@ -41,6 +41,26 @@ fn test_big_prime2() {
 }
 
 #[test]
+fn test_first_prime3() {
+    assert_eq!(np::nth_with_caching_opt(1), 2);
+}
+
+#[test]
+fn test_second_prime3() {
+    assert_eq!(np::nth_with_caching_opt(2), 3);
+}
+
+#[test]
+fn test_sixth_prime3() {
+    assert_eq!(np::nth_with_caching_opt(6), 13);
+}
+
+#[test]
+fn test_big_prime3() {
+    assert_eq!(np::nth_with_caching_opt(10_000), 104_729);
+}
+
+#[test]
 fn test_is_prime_2() {
     assert_eq!(np::is_prime(2), true);
 }

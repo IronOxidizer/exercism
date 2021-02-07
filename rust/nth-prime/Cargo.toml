@@ -4,7 +4,7 @@ name = "nth_prime"
 version = "2.1.0"
 
 [dependencies]
-criterion = "0.3"
+criterion = { version = "0.3", default-features = false }
 
 [[bin]]
 name = "main"
