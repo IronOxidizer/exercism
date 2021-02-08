@@ -1,8 +1,8 @@
 pub fn nth(n: u32) -> u32 {
     if n > 1000 {
-        return nth_with_caching(n)
+        nth_with_caching(n)
     } else {
-        return nth_naive(n)
+        nth_naive(n)
     }
 }
 
@@ -18,8 +18,7 @@ pub fn nth_naive(n: u32) -> u32 {
             }
         }
     }
-
-    return 0;
+    0
 }
 
 pub fn is_prime(n: u32) -> bool {
@@ -29,8 +28,7 @@ pub fn is_prime(n: u32) -> bool {
             return false
         }
     }
-
-    return true;
+    true
 }
 
 // nth_with_caching determines the nth prime.
@@ -104,7 +102,7 @@ pub fn nth_with_caching_opt(n: u32) -> u32 {
     let mut candidate = 7;
     loop {
         for _ in 0..4 {
-            if is_odd_prime_plus(candidate, &primes) {
+            if is_prime_simple(candidate, &primes) {
                 primes.push(candidate);
                 primes_found += 1;
     
@@ -118,9 +116,7 @@ pub fn nth_with_caching_opt(n: u32) -> u32 {
     }
 }
 
-// is_prime_plus returns true if n is prime.
-// if not empty, first_x_primes must be the set of the first x primes.
-fn is_odd_prime_plus(n: u32, first_x_primes: &Vec<u32>) -> bool {
+fn is_prime_simple(n: u32, first_x_primes: &Vec<u32>) -> bool {
     let sqrt_n = (n as f64).sqrt() as u32;
     for prime in first_x_primes {
         if *prime > sqrt_n {
@@ -129,11 +125,5 @@ fn is_odd_prime_plus(n: u32, first_x_primes: &Vec<u32>) -> bool {
             return false
         }
     }
-
-    let mut divisor = first_x_primes.last().unwrap() + 2;
-    while divisor < sqrt_n {
-        if n % divisor == 0 {return false}
-        divisor += 2;
-    }
-    true
+    false
 }
